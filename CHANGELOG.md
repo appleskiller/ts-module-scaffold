@@ -1,8 +1,3 @@
-<a name="1.0.0"></a>
-# [1.0.0](https://github.com/appleskiller/ts-module-scaffold/compare/v1.0.1...v1.0.0) (2017-11-26)
-
-
-
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/appleskiller/ts-module-scaffold/compare/v1.0.0...v1.0.1) (2017-11-26)
 
