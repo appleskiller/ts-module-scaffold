@@ -11,11 +11,15 @@ then
     echo "> Releasing $VERSION ..."
     VERSION=$VERSION
 
+
     # commit
     echo "> Commit all change ..."
     git add -A
     git commit -m "[build] $VERSION"
 
+    # version
+    npm version $VERSION --message "[release] $VERSION"
+    
     # tag
     echo "> Make tag v$VERSION ..."
     git tag -a v$VERSION -m "[tag] $VERSION"
