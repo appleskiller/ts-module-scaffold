@@ -19,10 +19,9 @@ then
 
     # version
     npm version $VERSION --message "[release] $VERSION"
-    
+
     # tag
     echo "> Make tag v$VERSION ..."
-    git tag -a v$VERSION -m "[tag] $VERSION"
     git push origin v$VERSION
     git push
     
