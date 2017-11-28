@@ -17,7 +17,7 @@ then
     git commit -m "[build] $VERSION"
 
     # version
-    npm version $VERSION --message "[release] $VERSION"
+    npm version $VERSION
 
     # tag
     echo "> Make tag v$VERSION ..."
