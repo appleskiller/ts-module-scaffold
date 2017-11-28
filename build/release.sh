@@ -22,6 +22,13 @@ then
     # tag
     echo "> Make tag v$VERSION ..."
     git tag v$VERSION
+    git push origin --tags
+    git push
+    
+
+    # tag
+    echo "> Make tag v$VERSION ..."
+    git tag v$VERSION
     git push origin v$VERSION
     git push
     
