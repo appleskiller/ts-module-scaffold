@@ -1,6 +1,6 @@
 {
   "name": "ts-module-scaffold",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a scaffold for typescript module project.",
   "bin": {
     "tsmp": "./bin/runner"
