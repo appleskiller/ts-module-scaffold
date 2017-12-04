@@ -1,6 +1,6 @@
 {
   "name": "tsms",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "tsms is a typescript module scaffold.",
   "bin": {
     "tsms": "./bin/runner"

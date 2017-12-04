@@ -5,7 +5,7 @@ var fs = require('fs-extra');
 var handlebars = require('handlebars');
 var logger = require('./logger');
 
-var templateDir = path.resolve(`${__dirname}/../template`);
+var templateDir = path.resolve(`${__dirname}/../templates`);
 function copyFile(source, dest, data, relativeFile) {
     return fs.ensureFile(dest).then(() => {
         var content = fs.readFileSync(source, 'utf-8');
