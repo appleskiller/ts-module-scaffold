@@ -17,7 +17,10 @@ function copyFile(source, dest, data, relativeFile) {
 }
 function generateFile(file, destDir, data, args) {
     var relativeFile = path.relative(templateDir, file);
-    var destFile = path.resolve(path.join(destDir, relativeFile))
+    var destFile = path.resolve(path.join(destDir, relativeFile));
+    if (path.extname(destFile) === ".hbs") {
+        destFile = path.join(path.dirname(destFile), path.basename(destFile, ".hbs"));
+    }
     if (args.force || !fs.existsSync(destFile)) {
         return copyFile(file, destFile, data, relativeFile);
     } else {
