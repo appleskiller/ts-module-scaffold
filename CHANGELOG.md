@@ -1,5 +1,15 @@
-<a name="1.0.9"></a>
-## [1.0.9](https://github.com/appleskiller/tsms/compare/v1.0.4...v1.0.9) (2017-12-04)
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/appleskiller/tsms/compare/v1.0.10...v1.1.2) (2017-12-04)
+
+
+### Features
+
+* remove typings ([363bcb2](https://github.com/appleskiller/tsms/commit/363bcb2))
+
+
+
+<a name="1.0.10"></a>
+## [1.0.10](https://github.com/appleskiller/tsms/compare/v1.0.4...v1.0.10) (2017-12-04)
 
 
 ### Bug Fixes
