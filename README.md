@@ -6,3 +6,7 @@ tsms is a typescript module scaffold.
 ```
 $ npm install -g tsms
 ```
+## usage
+```
+tsms init
+```
