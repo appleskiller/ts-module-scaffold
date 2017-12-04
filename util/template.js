@@ -17,16 +17,16 @@ function copyFile(source, dest, data, relativeFile) {
 }
 function generateFile(file, destDir, data, args) {
     var relativeFile = path.relative(templateDir, file);
-    var destFile = path.resolve(path.join(destDir, relativeFile));
-    if (path.extname(destFile) === ".hbs") {
-        destFile = path.join(path.dirname(destFile), path.basename(destFile, ".hbs"));
+    if (path.extname(relativeFile) === ".hbs") {
+        relativeFile = path.join(path.dirname(relativeFile), path.basename(relativeFile, ".hbs"));
     }
+    var destFile = path.resolve(path.join(destDir, relativeFile));
     if (args.force || !fs.existsSync(destFile)) {
         return copyFile(file, destFile, data, relativeFile);
     } else {
         return inquirer.prompt({
             type: 'confirm',
-            message: `overwrite this file ${relativeFile} ?`,
+            message: `overwrite ${relativeFile} ?`,
             name: 'overwrite',
             default: true
         }).then((answer) => {
@@ -54,12 +54,15 @@ module.exports = {
         return new Promise((resolve, reject) => {
             var destDir = process.cwd();
             glob(`${templateDir}/**/*`, (error, matches) => {
-                map(matches, (file) => {
-                    if (fs.statSync(file).isFile()) {
-                        return generateFile(file, destDir, data, args)
-                    } else {
-                        return Promise.resolve();
-                    }
+                glob(`${templateDir}/**/.*`, (error, all) => {
+                    all = matches.concat(all);
+                    map(all, (file) => {
+                        if (fs.statSync(file).isFile()) {
+                            return generateFile(file, destDir, data, args)
+                        } else {
+                            return Promise.resolve();
+                        }
+                    })
                 })
             })
         })
