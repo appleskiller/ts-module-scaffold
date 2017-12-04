@@ -1,5 +1,8 @@
-# ts-module-scaffold
-a scaffold for typescript module project.
+# tsms
+tsms is a typescript module scaffold.
 
+## install
 
-TODO - 處理npm提交的問題
+```
+$ npm install -g tsms
+```
